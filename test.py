@@ -8,12 +8,16 @@ class TestDownload(unittest.TestCase):
 
     def setUp(self):
         self.url = 'http://www.pythonchallenge.com/pc/def/channel.zip'
-        self.dest_path = os.path.join(os.path.abspath('data'), 'channel.zip') 
+        self.dest_path = os.path.join(os.path.abspath('data'), 'test_channel.zip') 
         self.binary_str = b'sdbjfjhdsgjhfjdhsfgjh'
 
+    def tearDown(self):
+        if os.path.exists(self.dest_path):
+            os.remove(self.dest_path)
+    
     def test_download_zip_file(self):
         # downolad 
-        is_download_succesfull = download_zip_file(self.url, self.dest_path)
+        is_download_succesfull = download_zip_file(self.url)
         self.assertTrue(is_download_succesfull)
 
     def test_downloaded_exists(self):
