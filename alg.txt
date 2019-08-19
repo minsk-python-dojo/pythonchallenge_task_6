@@ -1,0 +1,29 @@
+zip_file -> n *.txt files
+
+txt_file -> #Comment + next_file_number
+
+Task:
+    Final task - ????
+    Current task -> build sorted comment from zip content -> learn next task
+
+Building sorted comment:
+1. Download the input zip
+2. Extract the files from the input zip into the data directory
+3. Construct the ZippedFilesIterator from the extracted files.
+4. Iterate through the files using the number from the content as a link to the next file 
+5 On each iteration concat the current file comment to the final comment.
+
+
+Objects:
+    ZipFile - represents the input zip
+    ZippedFile - represents the txt file inside the zip. Has filename, comment, link to the next file.
+    FinalComment - represents the final comment built from the zip files
+    ZippedFilesIterator - represents the object that allows us to iterate the zipped files in the correct order.
+
+
+Done:
+1 +
+2 -
+3 -
+4 -
+5 -
